@@ -410,7 +410,7 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
                 hv.setHorizontal = setHorizontal
             }
         }
-        let t = String(format: "%2d", ((section + 1) * interval) + range.location)
+        let t = String(format: "%2d", ((section + 1) * interval) + (range.location - 1))
         hv.label.text = "\(t)\(scale)"
         return hv
     }
@@ -431,7 +431,7 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         cp.y += scrollView.contentOffset.y
         print("cp = ", cp, "IndexPath: ", self.table.indexPathForRow(at: cp) ?? "Nohing", "scrollView.contentOffset.y = ", scrollView.contentOffset.y)
         if let ip = self.table.indexPathForRow(at: cp) {
-            self.pointer.valueLabel.text = "\(ip.section * interval + ip.row)"
+            self.pointer.valueLabel.text = "\(range.location + ip.section * interval + ip.row)"
         }
         //print("cp = ", cp, "IndexPath: ", self.table.indexPathForRow(at: cp) ?? "Nohing")
     }
