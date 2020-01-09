@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9392BA6023C5D72000032721 /* ScrollScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9392BA6023C5D72000032721 /* ScrollScaleExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollScaleExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9392BA6323C5D72000032721 /* SSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppDelegate.swift; sourceTree = "<group>"; };
 		9392BA6523C5D72000032721 /* SSSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSceneDelegate.swift; sourceTree = "<group>"; };
 		9392BA6723C5D72000032721 /* SSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSViewController.swift; sourceTree = "<group>"; };
@@ -44,10 +44,10 @@
 		9392BA6C23C5D72500032721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9392BA6F23C5D72500032721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9392BA7123C5D72500032721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9392BA7623C5D72500032721 /* ScrollScaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollScaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9392BA7623C5D72500032721 /* ScrollScaleExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollScaleExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9392BA7A23C5D72500032721 /* ScrollScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollScaleTests.swift; sourceTree = "<group>"; };
 		9392BA7C23C5D72500032721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9392BA8123C5D72500032721 /* ScrollScaleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollScaleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9392BA8123C5D72500032721 /* ScrollScaleExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollScaleExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9392BA8523C5D72500032721 /* ScrollScaleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollScaleUITests.swift; sourceTree = "<group>"; };
 		9392BA8723C5D72500032721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9392BA9323C5D7BA00032721 /* SSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSView.swift; sourceTree = "<group>"; };
@@ -91,9 +91,9 @@
 		9392BA6123C5D72000032721 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9392BA6023C5D72000032721 /* ScrollScale.app */,
-				9392BA7623C5D72500032721 /* ScrollScaleTests.xctest */,
-				9392BA8123C5D72500032721 /* ScrollScaleUITests.xctest */,
+				9392BA6023C5D72000032721 /* ScrollScaleExample.app */,
+				9392BA7623C5D72500032721 /* ScrollScaleExampleTests.xctest */,
+				9392BA8123C5D72500032721 /* ScrollScaleExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9392BA5F23C5D72000032721 /* ScrollScale */ = {
+		9392BA5F23C5D72000032721 /* ScrollScaleExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9392BA8A23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScale" */;
+			buildConfigurationList = 9392BA8A23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleExample" */;
 			buildPhases = (
 				9392BA5C23C5D72000032721 /* Sources */,
 				9392BA5D23C5D72000032721 /* Frameworks */,
@@ -146,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = ScrollScale;
+			name = ScrollScaleExample;
 			productName = ScrollScale;
-			productReference = 9392BA6023C5D72000032721 /* ScrollScale.app */;
+			productReference = 9392BA6023C5D72000032721 /* ScrollScaleExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9392BA7523C5D72500032721 /* ScrollScaleTests */ = {
+		9392BA7523C5D72500032721 /* ScrollScaleExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9392BA8D23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleTests" */;
+			buildConfigurationList = 9392BA8D23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleExampleTests" */;
 			buildPhases = (
 				9392BA7223C5D72500032721 /* Sources */,
 				9392BA7323C5D72500032721 /* Frameworks */,
@@ -164,14 +164,14 @@
 			dependencies = (
 				9392BA7823C5D72500032721 /* PBXTargetDependency */,
 			);
-			name = ScrollScaleTests;
+			name = ScrollScaleExampleTests;
 			productName = ScrollScaleTests;
-			productReference = 9392BA7623C5D72500032721 /* ScrollScaleTests.xctest */;
+			productReference = 9392BA7623C5D72500032721 /* ScrollScaleExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9392BA8023C5D72500032721 /* ScrollScaleUITests */ = {
+		9392BA8023C5D72500032721 /* ScrollScaleExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9392BA9023C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleUITests" */;
+			buildConfigurationList = 9392BA9023C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleExampleUITests" */;
 			buildPhases = (
 				9392BA7D23C5D72500032721 /* Sources */,
 				9392BA7E23C5D72500032721 /* Frameworks */,
@@ -182,9 +182,9 @@
 			dependencies = (
 				9392BA8323C5D72500032721 /* PBXTargetDependency */,
 			);
-			name = ScrollScaleUITests;
+			name = ScrollScaleExampleUITests;
 			productName = ScrollScaleUITests;
-			productReference = 9392BA8123C5D72500032721 /* ScrollScaleUITests.xctest */;
+			productReference = 9392BA8123C5D72500032721 /* ScrollScaleExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9392BA5B23C5D72000032721 /* Build configuration list for PBXProject "ScrollScale" */;
+			buildConfigurationList = 9392BA5B23C5D72000032721 /* Build configuration list for PBXProject "ScrollScaleExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -223,9 +223,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9392BA5F23C5D72000032721 /* ScrollScale */,
-				9392BA7523C5D72500032721 /* ScrollScaleTests */,
-				9392BA8023C5D72500032721 /* ScrollScaleUITests */,
+				9392BA5F23C5D72000032721 /* ScrollScaleExample */,
+				9392BA7523C5D72500032721 /* ScrollScaleExampleTests */,
+				9392BA8023C5D72500032721 /* ScrollScaleExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,12 +290,12 @@
 /* Begin PBXTargetDependency section */
 		9392BA7823C5D72500032721 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9392BA5F23C5D72000032721 /* ScrollScale */;
+			target = 9392BA5F23C5D72000032721 /* ScrollScaleExample */;
 			targetProxy = 9392BA7723C5D72500032721 /* PBXContainerItemProxy */;
 		};
 		9392BA8323C5D72500032721 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9392BA5F23C5D72000032721 /* ScrollScale */;
+			target = 9392BA5F23C5D72000032721 /* ScrollScaleExample */;
 			targetProxy = 9392BA8223C5D72500032721 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -488,7 +488,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollScale.app/ScrollScale";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollScaleExample.app/ScrollScaleExample";
 			};
 			name = Debug;
 		};
@@ -510,7 +510,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollScale.app/ScrollScale";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScrollScaleExample.app/ScrollScaleExample";
 			};
 			name = Release;
 		};
@@ -557,7 +557,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9392BA5B23C5D72000032721 /* Build configuration list for PBXProject "ScrollScale" */ = {
+		9392BA5B23C5D72000032721 /* Build configuration list for PBXProject "ScrollScaleExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9392BA8823C5D72500032721 /* Debug */,
@@ -566,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9392BA8A23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScale" */ = {
+		9392BA8A23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9392BA8B23C5D72500032721 /* Debug */,
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9392BA8D23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleTests" */ = {
+		9392BA8D23C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9392BA8E23C5D72500032721 /* Debug */,
@@ -584,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9392BA9023C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleUITests" */ = {
+		9392BA9023C5D72500032721 /* Build configuration list for PBXNativeTarget "ScrollScaleExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9392BA9123C5D72500032721 /* Debug */,

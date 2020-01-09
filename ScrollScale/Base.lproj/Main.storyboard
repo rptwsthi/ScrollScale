@@ -80,7 +80,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="setHorizontal" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="setHorizontal" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="scale" value="kg"/>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,7 +92,7 @@
                                                             <integer key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="range" keyPath="range">
-                                                            <range key="value" location="40" length="1000"/>
+                                                            <range key="value" location="16" length="200"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
