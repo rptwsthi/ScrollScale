@@ -213,6 +213,8 @@ class ScalePointer : UIView {
         valueLabel.minimumScaleFactor = 0.5
         scScaleLable.adjustsFontSizeToFitWidth = true
         scScaleLable.minimumScaleFactor = 0.5
+        
+        self.isUserInteractionEnabled = false
     }
     
     required init?(coder: NSCoder) {
@@ -232,7 +234,6 @@ class ScalePointer : UIView {
         f.origin.x = 64
         valueLabel.frame = f
         valueLabel.textAlignment = .center
-        //valueLabel.backgroundColor = UIColor(white: 0.6, alpha: 0.4)
         self.addSubview(valueLabel)
         
         f.origin.x += f.size.width + 12
@@ -259,6 +260,7 @@ class ScalePointer : UIView {
     }
 }
 
+@available(iOS 8.2, *)
 open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
     //MARK: IBInspectable
     @IBInspectable public var scale : String = "cm"
@@ -304,8 +306,13 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
     
     //UITableViewDelegate, UITableViewDataSource
     func addScaleTable () {
-        var f = self.frame
-
+        var cf = self.frame//calculated frame
+        if setHorizontal == true {
+            cf.size.width = self.frame.size.height
+            cf.size.height = self.frame.size.width
+        }
+        var f = cf
+        
         /*let h = f.size.height / 3
         f.origin.y -= h / 2
         f.size.height += h*/
@@ -314,18 +321,21 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         w = (w > 60) ? w : 60
         f.origin.x = f.size.width - w
         f.size.width = w
+        f.origin.y = 0
         
         let table = UITableView(frame: f, style: .grouped)
         table.delegate = self
         table.dataSource = self
+        table.decelerationRate = UIScrollView.DecelerationRate(rawValue: 0.1)
+        print ("table.decelerationRate = ", table.decelerationRate)
         table.showsVerticalScrollIndicator = false
         table.separatorStyle = .none
         table.bounces = false
-        table.backgroundColor = .white
+        table.backgroundColor = .clear
         
         //for scrollable padding
-        table.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: self.frame.size.height / 2))
-        table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: self.frame.size.height / 2))
+        table.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: cf.size.height / 2))
+        table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: cf.size.height / 2))
         if setHorizontal == true {
             table.transform = CGAffineTransform(scaleX: 1, y: -1);
         }
@@ -335,12 +345,19 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
     }
     
     func addIndicatorArrow() {
-        var f = self.frame
+        var cf = self.frame//calculated frame
+        if setHorizontal == true {
+            cf.size.width = self.frame.size.height
+            cf.size.height = self.frame.size.width
+        }
+        var f = cf
+
         f.size.height = 60
-        f.origin.y = self.frame.size.height / 2 - f.size.height / 2
+        f.origin.y = cf.size.height / 2 - f.size.height / 2
         f.origin.x = 0
         let pointer = ScalePointer(frame: f)
         pointer.color = .blue
+        pointer.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
         pointer.scScaleLable.text = scale
         
         var fnt = font
@@ -348,7 +365,6 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         pointer.valueLabel.text = "100"
         fnt = font.withSize(font.pointSize * 2)
         pointer.valueLabel.font = fnt
-        pointer.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
         if setHorizontal == true {
             pointer.rotateSubViews(angle: -90)
         }
