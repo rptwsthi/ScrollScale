@@ -23,7 +23,6 @@ extension UIView {
     func rotate(angle: CGFloat) {
         let radians = angle / 180.0 * CGFloat.pi
         let rotation = self.transform.rotated(by: radians);
-        //self.transform.
         self.transform = rotation
     }
 }
@@ -356,8 +355,7 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         f.origin.y = cf.size.height / 2 - f.size.height / 2
         f.origin.x = 0
         let pointer = ScalePointer(frame: f)
-        pointer.color = .blue
-        pointer.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
+        pointer.color = selectionColor
         pointer.scScaleLable.text = scale
         
         var fnt = font
