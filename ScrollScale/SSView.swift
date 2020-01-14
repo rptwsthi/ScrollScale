@@ -127,6 +127,7 @@ class ScaleBarHeader : UITableViewHeaderFooterView {
     let indicatorView = UIView()
     var setHorizontal : Bool = true {
         didSet {
+            self.label.textAlignment = .right
             self.label.transform = CGAffineTransform(scaleX: -1, y: 1);
         }
     }
@@ -229,28 +230,28 @@ class ScalePointer : UIView {
     func setupUI () {
         var f = self.frame
         f.origin.y = 0
-        f.size.width = 72
-        f.origin.x = 64
+        f.size.width = 64
+        f.origin.x = 80
         valueLabel.frame = f
         valueLabel.textAlignment = .center
         self.addSubview(valueLabel)
         
-        f.origin.x += f.size.width + 12
+        f.origin.x += f.size.width + 4
         f.origin.y = f.size.height / 2 - scArrow.frame.size.height / 2
         f.size = scArrow.frame.size
         scArrow.frame = f
         scArrow.pointerDirection = .right
         self.addSubview(scArrow)
         
-        f.origin.x += f.size.width + 16
+        f.origin.x += f.size.width + 8
         f.size = self.frame.size
-        f.size.width = 36
+        f.size.width = 24
         f.origin.y = 0
         scScaleLable.frame = f
         scScaleLable.textAlignment = .center
         self.addSubview(scScaleLable)
         
-        f.origin.x += f.size.width + 16
+        f.origin.x += f.size.width + 8
         f.size.width = self.frame.size.width - f.origin.x
         f.size.height = 2
         f.origin.y = self.frame.size.height / 2 - f.size.height / 2
