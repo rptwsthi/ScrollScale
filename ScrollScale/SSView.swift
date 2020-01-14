@@ -110,10 +110,14 @@ class ScaleBarCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(indicatorView)
         self.selectionStyle = .none
+        
+        //..
+        self.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        self.backgroundColor = .clear
         
         //..
         self.contentView.addSubview(indicatorView)
