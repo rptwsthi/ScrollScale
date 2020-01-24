@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UITableViewController, RPTScaleViewDelegate {
+    @IBOutlet var scaleView: RPTScaleView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        scaleView.delegate = self
     }
 
-
+    //RPTScaleViewDelegate
+    func scale(view:RPTScaleView, scale:String, value:Int) {
+        print("scale = ", value, scale)
+    }
 }
 
