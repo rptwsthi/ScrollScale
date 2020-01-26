@@ -264,8 +264,6 @@ class ScalePointer : UIView {
 
 @available(iOS 8.2, *)
 open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
-    var delegate : RPTScaleViewDelegate?
-    
     //MARK: IBInspectable
     @IBInspectable public var scale : String = "cm"
     @IBInspectable public var font : UIFont = UIFont.systemFont(ofSize: 14, weight: .ultraLight)
@@ -283,6 +281,13 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
     
     var table : UITableView!
     var pointer : ScalePointer!
+    
+    var  selectedValue : Int = 0
+    public var delegate : RPTScaleViewDelegate? {
+        didSet {
+            self.selectedValue = self.delegate?.selectedValue(view: self, scale: self.scale) ?? 0
+        }
+    }
     
     // Init
     public override init(frame: CGRect) {
@@ -306,6 +311,21 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         
         //..
         addIndicatorArrow()
+        
+        //..
+        if selectedValue != 0 {
+            self.delay(0.3) {
+                self.scrollTo(selected: self.selectedValue)
+            }
+        }
+    }
+    
+    func scrollTo(selected value:Int) {
+        let fV = value - range.location
+        let section = fV / interval
+        let row = fV % interval
+        let ip = IndexPath(row: row, section: section)
+        self.table.scrollToRow(at: ip, at: .middle, animated: true)
     }
     
     //UITableViewDelegate, UITableViewDataSource
@@ -365,7 +385,7 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         
         var fnt = font
         pointer.scScaleLable.font = fnt
-        pointer.valueLabel.text = "100"
+        pointer.valueLabel.text = "\(selectedValue)"
         fnt = font.withSize(font.pointSize * 2)
         pointer.valueLabel.font = fnt
         if setHorizontal == true {
@@ -444,12 +464,11 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         targetContentOffset.pointee.y = round(targetContentOffset.pointee.y / ch) * ch
     }
  
-    var  selectedValue : Int = 0
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var cp  = self.table.center
         cp.x = 20
         cp.y += scrollView.contentOffset.y
-        print("cp = ", cp, "IndexPath: ", self.table.indexPathForRow(at: cp) ?? "Nohing", "scrollView.contentOffset.y = ", scrollView.contentOffset.y)
+        //print("cp = ", cp, "IndexPath: ", self.table.indexPathForRow(at: cp) ?? "Nohing", "scrollView.contentOffset.y = ", scrollView.contentOffset.y)
         if let ip = self.table.indexPathForRow(at: cp) {
             self.selectedValue = range.location + ip.section * interval + ip.row
             self.pointer.valueLabel.text = "\(self.selectedValue)"
@@ -461,7 +480,7 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
         var cp  = self.table.center
         cp.x = 20
         cp.y += scrollView.contentOffset.y
-        print("cp = ", cp, "IndexPath: ", self.table.indexPathForRow(at: cp) ?? "Nohing", "scrollView.contentOffset.y = ", scrollView.contentOffset.y)
+        //print("cp = ", cp, "IndexPath: ", self.table.indexPathForRow(at: cp) ?? "Nothing", "scrollView.contentOffset.y = ", scrollView.contentOffset.y)
         if let ip = self.table.indexPathForRow(at: cp) {
             self.selectedValue = range.location + ip.section * interval + ip.row
             self.pointer.valueLabel.text = "\(self.selectedValue)"
@@ -470,7 +489,10 @@ open class RPTScaleView : UIView, UITableViewDelegate, UITableViewDataSource  {
     }
 }
 
-protocol RPTScaleViewDelegate {
+public protocol RPTScaleViewDelegate {
     @available(iOS 8.2, *)
     func scale(view:RPTScaleView, scale:String, value:Int)
+    
+    @available(iOS 8.2, *)
+    func selectedValue(view:RPTScaleView, scale:String) -> Int?
 }

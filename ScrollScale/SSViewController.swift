@@ -22,5 +22,9 @@ class ViewController: UITableViewController, RPTScaleViewDelegate {
     func scale(view:RPTScaleView, scale:String, value:Int) {
         print("scale = ", value, scale)
     }
+    
+    func selectedValue(view:RPTScaleView, scale:String) -> Int? {
+        return 62
+    }
 }
 
